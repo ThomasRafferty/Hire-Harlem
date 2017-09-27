@@ -1,0 +1,41 @@
+<% include partials/header %>
+
+<div class="container">
+    <header class="jumbotron" style="color:gray">
+       <div class="container">
+           <h2>Welcome to Hire Harlem</h2> 
+           <p><h3>View our businesses from all over the community</h3></p>
+            <p>
+                <a class="btn btn-primary btn-lrg" href="/business/new">Submit new business!</a>
+            </p>
+            <p>
+              <form action="/business" method="GET" class="form-inline" id="business-search">
+                <div class="form-group">
+                  <input type="text" name="search" placeholder="business search..." class="form-control">
+                </div>
+              </form>
+             </p>
+        </div>
+    </header>
+    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+        <% business.forEach(function(business){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= business.image %>">
+                    <div class="caption">
+                        <h4><%= business.name %></h4>
+                        <p><%= business.address%></p>
+                        <p><%= business.category%></p>
+                    </div>
+                    <p>
+                        <a href="/business/<%= business._id%>" class="btn btn-primary">Details</a>
+                    </p>
+                </div>
+            </div>    
+        <% }); %>
+    </div>        
+</div>
+
+
+
+<% include partials/footer %>

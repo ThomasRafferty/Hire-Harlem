@@ -1,0 +1,46 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="row">
+        <h2 style="text-align:center">Edit <%= business.name %></h2>
+        <div style="width 40%; margin:25px auto">
+            <form action="/business/<%= business._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="business[name]" value="<%= business.name %>">
+                </div>  
+                <div class="form-group">
+                    <input class="form-control" type="text" name="business[phoneNumber]" value="<%= business.phoneNumber %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="business[website]" value="<%= business.website %>">
+                </div>  
+                <div class="form-group">
+                    <input class="form-control" type="text" name="business[address]" value="<%= business.address %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="business[owner]" value="<%= business.owner %>">
+                </div>  
+                <div class="form-group">
+                    <input class="form-control" type="text" name="business[description]" value="<%= business.description %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="business[category]" value="<%= business.category %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="business[subCategory]" value="<%= business.subCategory %>">
+                </div> 
+                <div class="form-group">
+                    <input class="form-control" type="text" name="business[searchTags]" value="<%= business.searchTags %>">
+                </div>  
+                <div class="form-group">
+                    <input class="form-control" type="text" name="business[image]" value="<%= business.image %>">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>    
+            </form>
+            <a href="/business" style="color:white">Go Back</a>
+        </div>    
+    </div>        
+</div>
+<% include partials/footer %>
