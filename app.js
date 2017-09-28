@@ -7,24 +7,27 @@ var express         = require("express"),
     LocalStrategy   = require("passport-local"),
     methodOverride  = require("method-override"),
     User            = require("./models/user"),
-    Business        = require("./models/business"),
-    seedDB          = require("./seeds");
+    Business        = require("./models/business");
+    // seedDB          = require("./seeds");
     // request         = require("request");
     
 var businessRoutes  = require("./routes/business"),
     authRoutes      = require("./routes/auth"),
     searchRoutes    = require("./routes/search");
     
-
 //App config
-mongoose.connect("mongodb://localhost/hh-business",{useMongoClient: true});
+// mongoose.connect("mongodb://localhost/hh-business",{useMongoClient: true});
+mongoose.connect(process.env.DATABASEURL,{useMongoClient: true});
+// mongoose.connect("mongodb://hireharlem:hireharlem@ds155424.mlab.com:55424/hhtest");
+
+
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 // console.log(__dirname);
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(flash());
-seedDB();
+// seedDB();
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
