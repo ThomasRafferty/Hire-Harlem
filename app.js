@@ -7,19 +7,23 @@ var express         = require("express"),
     LocalStrategy   = require("passport-local"),
     methodOverride  = require("method-override"),
     User            = require("./models/user"),
-    Business        = require("./models/business");
+    Business        = require("./models/business"),
     // seedDB          = require("./seeds");
-    // request         = require("request");
+    request         = require("request");
     
 var businessRoutes  = require("./routes/business"),
     authRoutes      = require("./routes/auth"),
     searchRoutes    = require("./routes/search");
     
 //App config
+// var url = process.env.DATABASEURL || "mongodb://localhost/hh-business";
+// var url = process.env.DATABASEURL || "mongodb://alexocampo:hireharlem@hhtest-shard-00-02-ywyx5.mongodb.net:27017";
+// mongoose.connect(url);
+mongoose.connect("mongodb://alexocampo:hireharlem@hhtest-shard-00-00-ywyx5.mongodb.net:27017,hhtest-shard-00-01-ywyx5.mongodb.net:27017,hhtest-shard-00-02-ywyx5.mongodb.net:27017/test?ssl=true&replicaSet=hhtest-shard-0&authSource=admin");
 // mongoose.connect("mongodb://localhost/hh-business",{useMongoClient: true});
-mongoose.connect(process.env.DATABASEURL,{useMongoClient: true});
+// mongoose.connect(process.env.DATABASEURL,{useMongoClient: true});
 // mongoose.connect("mongodb://hireharlem:hireharlem@ds155424.mlab.com:55424/hhtest");
-
+// delete ^ actual database URL when open sourcing project
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -27,7 +31,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(flash());
-// seedDB();
+// seedDB(); //seed the database
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({

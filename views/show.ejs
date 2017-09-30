@@ -5,6 +5,8 @@
         <div class="col-md-4">
             <p class="lead"><h2><a href=""></a><%= business.name %></h2></p>
              <div class="well" id="map" style="width: 100%">
+             <!--<div id="map">-->
+                 
                   <!--map eventually-->
             </div>
             <div class="list-group" style="color:gray">
@@ -16,7 +18,8 @@
            
            
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8">   <!--style="overflow:scroll; height:400px; padding:2%;background:none  -->
+                
             <div class="thumbnail" style="background:none;">
                 <img class="image-responsive" src="<%=business.image%>">
                 <div class="caption-full">
@@ -31,48 +34,13 @@
             </div>
         </div>
 
-<!--                         YELP CAMP MAP            -->
-<!--<script>-->
-<!--  function initMap() {-->
-<!--    var address = <= business.address %>;-->
-<!--    var center = {address: address};-->
-<!--    var map = new google.maps.Map(document.getElementById('map'), {-->
-<!--        zoom: 12,-->
-<!--        center: center,-->
-<!--        scrollwheel: false-->
-<!--    });-->
-<!--    var contentString = -->
-<!--      <strong><= business.name %><br />-->
-<!--      <= business.address %></strong>-->
-<!--      <p><= business.description %></p>-->
-    
-<!--    var infowindow = new google.maps.InfoWindow({-->
-<!--      content: contentString-->
-<!--    });-->
-<!--    var marker = new google.maps.Marker({-->
-<!--        position: center,-->
-<!--        map: map-->
-<!--    });-->
-<!--    marker.addListener('click', function() {-->
-<!--      infowindow.open(map, marker);-->
-<!--    });-->
-<!--  }-->
-<!--</script>-->
-
-<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN9x7XusTHFJbVqOty_lH4OIkrTg_qIH4&callback"></script>-->
-
-<!--Display the campground location in show.ejs-->
-<!--Create a div with an id of map directly beneath where you have the Info 1, 2 and 3 .list-group inside of .col-md-3:-->
-<!--  <div id="map"></div>-->
- 
-<!--           END YELP CAMP MAP              -->
 
 
 
 
 
 
-
+<!--            CASPIO MAP               -->
 <script type="text/javascript" src="//static.caspio.com/mashup/script/caspio_mashups_v7.js"></script>
                 <script type="text/javascript">
                 var mapSettings = {
@@ -173,8 +141,8 @@
                 <!--        <div class="cxkg"><a href="https://c0acg060.caspio.com/dp.asp?AppKey=d54c500024417564a6284d7b9b22">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>-->
                 <!--        <div id="cbd54c500024417564a6284d7b9b22"></div>-->
                 <!--</div>-->
-            </div>
-
+<!--            </div>-->
+<!--            END CASPIO MAP               -->
 
 
 

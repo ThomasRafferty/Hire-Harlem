@@ -17,8 +17,85 @@
              </p>
         </div>
     </header>
-    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
-        <% business.forEach(function(business){ %>
+    
+    <h4>Browse by Category</h4>
+
+<!--Accordian Test-->
+
+    <div id="accordion" role="tablist">
+      <div class="card ">
+        <div class="card-header" role="tab" id="headingOne">
+          <h5 class="mb-0">
+             <button id="browse" class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Food
+            </button>
+            <button id="browse" class="btn btn-primary" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Beauty
+            </button>
+            <button id="browse" class="btn btn-primary" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Cultural
+            </button> 
+            <button id="browse" class="btn btn-primary" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Shopping
+            </button>
+            <button id="browse" class="btn btn-primary" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Services
+            </button>
+          </h5>
+        </div>
+    
+        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card card-body">
+                <button type="button" class="btn btn-secondary" id=subBrowse>Bakery</button> 
+                <button type="button" class="btn btn-secondary" id=subBrowse>Bars/Nightlife</button>
+                <button type="button" class="btn btn-secondary" id=subBrowse>Cafe</button>   
+                <button type="button" class="btn btn-secondary" id=subBrowse>Catering</button> 
+                <button type="button" class="btn btn-secondary" id=subBrowse>Classes</button>
+                <button type="button" class="btn btn-secondary" id=subBrowse>Restaurants</button>   
+                <button type="button" class="btn btn-secondary" id=subBrowse>Restaurants/Nightlife</button>   
+            </div>
+        </div>
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card card-body">
+                <button type="button" class="btn btn-secondary" id=subBrowse>Barbershops</button> 
+                <button type="button" class="btn btn-secondary" id=subBrowse>Nail Salon</button>
+                <button type="button" class="btn btn-secondary" id=subBrowse>Beauty</button>   
+                <button type="button" class="btn btn-secondary" id=subBrowse>Cosmetics</button> 
+                <button type="button" class="btn btn-secondary" id=subBrowse>Fitness</button>
+                <button type="button" class="btn btn-secondary" id=subBrowse>Beauty Salon</button>   
+            </div>
+        </div>
+        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card card-body">
+                <button type="button" class="btn btn-secondary" id=subBrowse>Art</button> 
+                <button type="button" class="btn btn-secondary" id=subBrowse>Tours</button>
+                <button type="button" class="btn btn-secondary" id=subBrowse>Music</button>
+            </div>
+        </div>
+        <div id="collapseFour" class="collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card card-body">
+                <button type="button" class="btn btn-secondary" id=subBrowse>Clothing</button> 
+                <button type="button" class="btn btn-secondary" id=subBrowse>Gifts</button>
+                <button type="button" class="btn btn-secondary" id=subBrowse>Health</button>   
+                <button type="button" class="btn btn-secondary" id=subBrowse>Alcohol</button> 
+                <button type="button" class="btn btn-secondary" id=subBrowse>Books</button>   
+            </div>
+        </div>
+        <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card card-body">
+                <button type="button" class="btn btn-secondary" id=subBrowse>Construction</button> 
+                <button type="button" class="btn btn-secondary" id=subBrowse>Consulting</button>
+                <button type="button" class="btn btn-secondary" id=subBrowse>Entertainment</button>   
+                <button type="button" class="btn btn-secondary" id=subBrowse>Pets</button>   
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!--<div class="row text-center" style="display:flex; flex-wrap:wrap;">-->
+     <div class="row text-center flex-wrap" id="business-grid">
+        <% businesses.forEach(function(business){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="<%= business.image %>">
